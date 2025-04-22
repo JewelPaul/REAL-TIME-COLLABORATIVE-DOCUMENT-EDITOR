@@ -111,22 +111,14 @@ The application uses a robust synchronization mechanism:
 
 ---
 
-## 🛠️ Getting Started
+# OUTPUT
+![Screenshot 2025-04-22 at 6 16 35 PM](https://github.com/user-attachments/assets/7a7e9752-c681-49ff-9b88-cd9360bc0573)
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/doccollab.git
+![Screenshot 2025-04-22 at 6 16 47 PM](https://github.com/user-attachments/assets/a5c0e906-c407-4dfe-a233-1c747d47b497)
 
-# 2. Install dependencies
-npm install
+![Screenshot 2025-04-22 at 6 19 04 PM](https://github.com/user-attachments/assets/c07a657a-11d2-4e7b-8874-34f02a2f5586)
 
-# 3. Set up PostgreSQL database and update connection details in server/.env
 
-# 4. Start the server
-cd server
-npm start
+DEVELOPED BY-
 
-# 5. Start the client
-cd client
-npm run dev
-
+JEWEL GABRIEL PAUL
