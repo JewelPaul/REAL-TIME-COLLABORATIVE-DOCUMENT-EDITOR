@@ -1,138 +1,132 @@
-# DocCollab - Real-Time Collaborative Document Editor
+# REAL-TIME COLLABORATIVE DOCUMENT EDITOR
 
-A professional real-time collaborative document editor that allows multiple users to edit documents simultaneously. This application provides a rich text editing experience with features like formatting, commenting, and real-time cursor tracking.
+COMPANY: CODTECH IT SOLUTIONS
 
-## Features
+NAME: JEWEL GABRIEL PAUL
 
-- **Real-time collaboration**: Multiple users can edit documents simultaneously
-- **Rich text editing**: Format text, add images, create lists, and more
-- **User presence**: See who's currently viewing and editing the document
-- **Cursor tracking**: See where other users are editing in real-time
-- **Document history**: Track changes and revert to previous versions
-- **User authentication**: Secure login and registration system
-- **Access control**: Control who can view and edit your documents
-- **Responsive design**: Works on desktop and mobile devices
+INTERN ID: CT04WR20
 
-## Tech Stack
+DOMAIN: FULL STACK WEB DEVELOPMENT
 
-### Frontend
-- React.js
-- Socket.io-client for real-time communication
-- Quill.js for rich text editing
-- Styled-components for styling
-- React Router for navigation
+DURATION: 4 WEEEKS
 
-### Backend
-- Node.js with Express
-- MongoDB for data storage
-- Socket.io for real-time communication
-- JWT for authentication
-- Bcrypt for password hashing
+MENTOR: NEELA SANTOSH
 
-## Getting Started
+# 📝 DocCollab: Real-Time Collaborative Document Editor
 
-### Prerequisites
+## 🚀 Project Overview
+**DocCollab** is a professional real-time collaborative document editing platform designed to enable multiple users to work on the same document simultaneously. Built with modern web technologies, this application provides a streamlined, intuitive interface for creating, editing, and sharing documents in real-time.
 
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas)
+---
 
-### Installation
+## ✨ Key Features
 
-1. Install all dependencies (root, client, and server)
-```
-npm run install-all
-```
+### 🔄 Real-Time Collaboration
+- **Synchronized Editing**: Changes made by any user are instantly visible to all collaborators  
+- **Cursor Position Preservation**: Editor maintains cursor position during updates to prevent disruption  
+- **Debounced Updates**: Optimized to prevent overwhelming the server with rapid changes  
+- **Reliable Connections**: Automatic reconnection handling if network issues occur  
 
-Alternatively, you can install dependencies separately:
+### 📄 Document Management
+- **Simple Document Creation**: Create new documents with a single click  
+- **Document Joining**: Join existing documents by entering the document ID  
+- **Email-Based Identification**: Users identify themselves with email addresses for collaboration  
+- **Document Persistence**: All documents are saved to a database for future access  
 
-1. Install backend dependencies
-```
+### 🖋️ Editor Functionality
+- **Rich Text Formatting**: Support for text styling (bold, italic, etc.)  
+- **Text Alignment**: Left, center, right, and justify alignment options  
+- **Lists**: Ordered and unordered list support  
+- **Media Support**: Insert and display images and other media  
+- **Code Blocks**: Special formatting for code snippets  
+- **Tables**: Create and edit tables within documents  
+
+### 👥 Collaboration Features
+- **Collaborator Sidebar**: See who is currently viewing or editing the document  
+- **Email Invitations**: Send Gmail invitations to potential collaborators with pre-filled document links  
+- **Connection Status**: Visual indicator showing connection status to the server  
+- **Last Saved Indicator**: Shows when the document was last saved  
+
+### 💻 User Interface
+- **Clean, Modern Design**: Professional appearance with intuitive controls  
+- **Responsive Layout**: Adapts to different screen sizes and devices  
+- **Visual Feedback**: Clear indicators for actions like saving and connection status  
+- **Modal Dialogs**: Clean interface for actions like inviting collaborators  
+
+---
+
+## 🧱 Technology Stack
+
+### 🌐 Frontend
+- **React 18**: Component-based UI development with the latest React features  
+- **Styled Components**: CSS-in-JS for component-scoped styling  
+- **React Router 6**: Client-side routing for single-page application navigation  
+- **TinyMCE 6**: Professional-grade WYSIWYG editor with extensive formatting options  
+- **Socket.IO Client**: Real-time bidirectional event-based communication  
+- **React Icons**: Comprehensive icon library for enhanced UI elements  
+
+### 🔧 Backend
+- **Node.js**: JavaScript runtime for server-side code  
+- **Express**: Web framework for handling HTTP requests and API endpoints  
+- **Socket.IO**: Server implementation for real-time communication  
+- **Sequelize**: ORM for database interactions with PostgreSQL  
+- **Morgan**: HTTP request logger for debugging and monitoring  
+- **CORS**: Cross-Origin Resource Sharing support for secure client-server communication  
+
+### 🗄️ Database
+- **PostgreSQL**: Relational database for document storage  
+- **SQLite**: Used for development and testing environments  
+
+---
+
+## ⚙️ Implementation Details
+
+### 🔁 Document Synchronization
+The application uses a robust synchronization mechanism:
+- Changes are debounced on the client side to optimize performance  
+- Socket.IO events transmit changes to the server  
+- The server broadcasts changes to all connected clients  
+- Changes are persisted to the database for durability  
+- Clients receive updates and apply them while preserving cursor position  
+
+### 🧩 Data Model
+- **SimpleDocument**: Stores document content, title, creator information, and collaborator list  
+- **Collaborators**: Tracked as an array of email addresses within each document  
+
+---
+
+## 📡 API Endpoints
+- `GET /api/documents/:id` → Retrieve a document by ID  
+- `POST /api/documents/:id` → Save changes to a document  
+- `POST /api/documents/:id/collaborators` → Add a collaborator to a document  
+
+---
+
+## 🔌 Socket Events
+- `join-document` → Connect a user to a specific document's editing session  
+- `content-change` → Broadcast content changes to all connected users  
+- `title-change` → Broadcast title changes to all connected users  
+- `collaborators-updated` → Notify all users when the collaborator list changes  
+- `document-saved` → Confirm when a document has been successfully saved  
+
+---
+
+## 🛠️ Getting Started
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/doccollab.git
+
+# 2. Install dependencies
+npm install
+
+# 3. Set up PostgreSQL database and update connection details in server/.env
+
+# 4. Start the server
 cd server
-npm install
-```
-
-2. Install frontend dependencies
-```
-cd ../client
-npm install
-```
-
-3. The `.env` files are already set up with the following configurations:
-
-Server `.env`:
-```
-PORT=5001
-MONGODB_URI=mongodb+srv://doccollab:doccollab123@cluster0.mongodb.net/doc-editor?retryWrites=true&w=majority
-JWT_SECRET=doccollab_secret_key_2024
-NODE_ENV=development
-```
-
-Client `.env`:
-```
-VITE_API_URL=http://localhost:5001
-```
-
-### Running the Application
-
-1. The application is configured to use a MongoDB Atlas cluster, so you don't need to run a local MongoDB instance.
-
-2. Run the pre-submission check to ensure everything is set up correctly
-```
-npm run check
-```
-
-3. Seed the database with sample data
-```
-npm run seed
-```
-
-4. Start both the backend and frontend servers with a single command
-```
 npm start
-```
 
-Alternatively, you can start the servers separately:
-
-- Start the backend server
-```
-cd server
-npm run dev
-```
-
-- Start the frontend development server
-```
+# 5. Start the client
 cd client
 npm run dev
-```
 
-5. Open your browser and navigate to `http://localhost:5173`
-
-### Demo Accounts
-
-The seed script creates two demo accounts that you can use to test the application:
-
-1. Demo User:
-   - Email: demo@example.com
-   - Password: password123
-
-2. Second User:
-   - Email: user2@example.com
-   - Password: password123
-
-## Usage
-
-1. Register a new account or log in with existing credentials
-2. Create a new document or open an existing one
-3. Start editing and collaborating in real-time
-4. Share the document with others by adding them as collaborators
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- [Quill.js](https://quilljs.com/) - The rich text editor used in this project
-- [Socket.io](https://socket.io/) - For real-time communication
-- [MongoDB](https://www.mongodb.com/) - For database storage
-- [React](https://reactjs.org/) - For the frontend UI
