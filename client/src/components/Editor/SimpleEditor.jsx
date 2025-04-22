@@ -342,61 +342,13 @@ const SimpleEditor = () => {
               plugins: [
                 'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
                 'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount', 'imagetools'
+                'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
               ],
               toolbar: 'undo redo | formatselect | ' +
                 'bold italic backcolor | alignleft aligncenter ' +
                 'alignright alignjustify | bullist numlist outdent indent | ' +
-                'link image media | removeformat | help',
-              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-
-              // Enable file browser for images
-              file_picker_types: 'image',
-
-              // Modern file picker that uses the browser's native file picker
-              file_picker_callback: function(callback, value, meta) {
-                // Only for images
-                if (meta.filetype === 'image') {
-                  // Create an input element
-                  const input = document.createElement('input');
-                  input.setAttribute('type', 'file');
-                  input.setAttribute('accept', 'image/*');
-
-                  // Define what happens when a file is selected
-                  input.onchange = function() {
-                    const file = this.files[0];
-
-                    // Create a FileReader to read the image
-                    const reader = new FileReader();
-                    reader.onload = function() {
-                      // Convert image to base64 string
-                      const id = 'blobid' + (new Date()).getTime();
-                      const blobCache = editorRef.current.editor.editorUpload.blobCache;
-                      const base64 = reader.result.split(',')[1];
-                      const blobInfo = blobCache.create(id, file, base64);
-                      blobCache.add(blobInfo);
-
-                      // Call the callback and pass the URL to the image
-                      callback(blobInfo.blobUri());
-                    };
-                    reader.readAsDataURL(file);
-                  };
-
-                  // Trigger the file input click
-                  input.click();
-                }
-              },
-
-              // Image options
-              image_advtab: true,
-              image_caption: true,
-              image_dimensions: true,
-              automatic_uploads: true,
-              images_upload_handler: function(blobInfo, success, failure) {
-                // This function handles the upload. In this case, we're just using
-                // base64 images, so we can directly call success with the base64 data
-                success('data:' + blobInfo.blob().type + ';base64,' + blobInfo.base64());
-              }
+                'removeformat | help',
+              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
             }}
           />
         </EditorWrapper>
