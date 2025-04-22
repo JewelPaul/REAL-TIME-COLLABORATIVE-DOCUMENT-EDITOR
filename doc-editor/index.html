@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Doc Editor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Pro Doc Editor</h1>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <button id="download-btn"><i class="fas fa-download"></i> Download PDF</button>
+    </aside>
+    <main>
+      <section class="toolbar">
+        <div class="tool-group">
+          <button id="upload-btn" title="Upload File"><i class="fas fa-upload"></i></button>
+          <button id="create-btn" title="Create New"><i class="fas fa-file"></i></button>
+        </div>
+        <div class="tool-group">
+          <button id="bold-btn" title="Bold"><i class="fas fa-bold"></i></button>
+          <button id="italic-btn" title="Italic"><i class="fas fa-italic"></i></button>
+          <button id="underline-btn" title="Underline"><i class="fas fa-underline"></i></button>
+          <button id="strikethrough-btn" title="Strikethrough"><i class="fas fa-strikethrough"></i></button>
+        </div>
+        <div class="tool-group">
+          <select id="font-family">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+          </select>
+          <select id="font-size">
+            <option value="12">12px</option>
+            <option value="16">16px</option>
+            <option value="20">20px</option>
+            <option value="24">24px</option>
+          </select>
+          <input type="color" id="font-color" value="#000000" title="Font Color">
+          <input type="color" id="bg-color" value="#ffffff" title="Background Color">
+        </div>
+        <div class="tool-group">
+          <button id="align-left" title="Align Left"><i class="fas fa-align-left"></i></button>
+          <button id="align-center" title="Align Center"><i class="fas fa-align-center"></i></button>
+          <button id="align-right" title="Align Right"><i class="fas fa-align-right"></i></button>
+          <button id="align-justify" title="Justify"><i class="fas fa-align-justify"></i></button>
+        </div>
+        <div class="tool-group">
+          <button id="bullet-list" title="Bullet List"><i class="fas fa-list-ul"></i></button>
+          <button id="number-list" title="Number List"><i class="fas fa-list-ol"></i></button>
+          <button id="indent-increase" title="Increase Indent"><i class="fas fa-indent"></i></button>
+          <button id="indent-decrease" title="Decrease Indent"><i class="fas fa-outdent"></i></button>
+        </div>
+        <div class="tool-group">
+          <select id="heading">
+            <option value="p">Normal</option>
+            <option value="h1">Heading 1</option>
+            <option value="h2">Heading 2</option>
+            <option value="h3">Heading 3</option>
+          </select>
+        </div>
+        <div class="tool-group">
+          <button id="insert-image" title="Insert Image"><i class="fas fa-image"></i></button>
+          <button id="insert-link" title="Insert Link"><i class="fas fa-link"></i></button>
+          <button id="insert-table" title="Insert Table"><i class="fas fa-table"></i></button>
+        </div>
+        <div class="tool-group">
+          <button id="undo-btn" title="Undo"><i class="fas fa-undo"></i></button>
+          <button id="redo-btn" title="Redo"><i class="fas fa-redo"></i></button>
+        </div>
+        <div class="tool-group">
+          <button id="pen-btn" title="Pen"><i class="fas fa-pen"></i></button>
+          <button id="highlighter-btn" title="Highlighter"><i class="fas fa-highlighter"></i></button>
+          <input type="color" id="draw-color" value="#000000" title="Drawing Color">
+        </div>
+      </section>
+      <section class="editor-container">
+        <input type="file" id="file-input" accept=".pdf,.docx" hidden>
+        <input type="file" id="image-input" accept="image/*" hidden>
+        <div id="editor" contenteditable="true" class="editor"></div>
+        <div id="pdf-viewer" hidden></div>
+        <canvas id="pdf-canvas" hidden></canvas>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

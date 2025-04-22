@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Document Collaboration</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#F2F2F2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#1A73E8" offset="0%"></stop>
+            <stop stop-color="#6C5CE7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Document-Collaboration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Background" fill="url(#linearGradient-1)" x="0" y="0" width="800" height="600"></rect>
+        
+        <!-- Main Document -->
+        <rect id="Document" fill="#FFFFFF" x="150" y="100" width="500" height="400" rx="8"></rect>
+        <rect id="Document-Shadow" fill="#E0E0E0" x="150" y="100" width="500" height="20" rx="8"></rect>
+        
+        <!-- Document Content -->
+        <rect id="Title-Bar" fill="#F5F5F5" x="170" y="130" width="460" height="40" rx="4"></rect>
+        <rect id="Line-1" fill="#E0E0E0" x="170" y="190" width="460" height="10" rx="2"></rect>
+        <rect id="Line-2" fill="#E0E0E0" x="170" y="210" width="400" height="10" rx="2"></rect>
+        <rect id="Line-3" fill="#E0E0E0" x="170" y="240" width="460" height="10" rx="2"></rect>
+        <rect id="Line-4" fill="#E0E0E0" x="170" y="260" width="420" height="10" rx="2"></rect>
+        <rect id="Line-5" fill="#E0E0E0" x="170" y="290" width="460" height="10" rx="2"></rect>
+        <rect id="Line-6" fill="#E0E0E0" x="170" y="310" width="380" height="10" rx="2"></rect>
+        <rect id="Line-7" fill="#E0E0E0" x="170" y="340" width="460" height="10" rx="2"></rect>
+        <rect id="Line-8" fill="#E0E0E0" x="170" y="360" width="440" height="10" rx="2"></rect>
+        <rect id="Line-9" fill="#E0E0E0" x="170" y="390" width="460" height="10" rx="2"></rect>
+        <rect id="Line-10" fill="#E0E0E0" x="170" y="410" width="300" height="10" rx="2"></rect>
+        <rect id="Line-11" fill="#E0E0E0" x="170" y="440" width="460" height="10" rx="2"></rect>
+        <rect id="Line-12" fill="#E0E0E0" x="170" y="460" width="200" height="10" rx="2"></rect>
+        
+        <!-- Cursor -->
+        <rect id="Cursor" fill="url(#linearGradient-2)" x="380" y="310" width="3" height="20"></rect>
+        
+        <!-- User Avatars -->
+        <circle id="User-1" fill="#1A73E8" cx="600" cy="150" r="15"></circle>
+        <circle id="User-2" fill="#34A853" cx="570" cy="150" r="15"></circle>
+        <circle id="User-3" fill="#FBBC04" cx="540" cy="150" r="15"></circle>
+        
+        <!-- Floating Elements -->
+        <g id="Floating-Document-1" transform="translate(50, 200)">
+            <rect fill="#FFFFFF" x="0" y="0" width="80" height="100" rx="4"></rect>
+            <rect fill="#F5F5F5" x="10" y="10" width="60" height="10" rx="2"></rect>
+            <rect fill="#E0E0E0" x="10" y="30" width="60" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="40" width="50" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="55" width="60" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="65" width="45" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="80" width="60" height="5" rx="1"></rect>
+        </g>
+        
+        <g id="Floating-Document-2" transform="translate(670, 250)">
+            <rect fill="#FFFFFF" x="0" y="0" width="80" height="100" rx="4"></rect>
+            <rect fill="#F5F5F5" x="10" y="10" width="60" height="10" rx="2"></rect>
+            <rect fill="#E0E0E0" x="10" y="30" width="60" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="40" width="50" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="55" width="60" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="65" width="45" height="5" rx="1"></rect>
+            <rect fill="#E0E0E0" x="10" y="80" width="60" height="5" rx="1"></rect>
+        </g>
+        
+        <!-- Connection Lines -->
+        <path d="M130,250 C100,250 80,200 100,150" stroke="#1A73E8" stroke-width="2" stroke-dasharray="5,5"></path>
+        <path d="M670,300 C700,300 720,250 700,200" stroke="#1A73E8" stroke-width="2" stroke-dasharray="5,5"></path>
+        
+        <!-- Collaboration Icons -->
+        <circle id="Icon-Background-1" fill="#1A73E8" cx="100" cy="150" r="20"></circle>
+        <circle id="Icon-Background-2" fill="#1A73E8" cx="700" cy="200" r="20"></circle>
+        
+        <!-- Decorative Elements -->
+        <circle id="Dot-1" fill="#E0E0E0" cx="50" cy="100" r="5"></circle>
+        <circle id="Dot-2" fill="#E0E0E0" cx="70" cy="120" r="3"></circle>
+        <circle id="Dot-3" fill="#E0E0E0" cx="40" cy="140" r="4"></circle>
+        <circle id="Dot-4" fill="#E0E0E0" cx="750" cy="400" r="5"></circle>
+        <circle id="Dot-5" fill="#E0E0E0" cx="730" cy="420" r="3"></circle>
+        <circle id="Dot-6" fill="#E0E0E0" cx="760" cy="440" r="4"></circle>
+    </g>
+</svg>
